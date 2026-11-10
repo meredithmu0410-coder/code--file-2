@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+body {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  max-width: 650px;
+  width: 100%;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 16px;
+  color: #00d9ff;
+  font-size: 34px;
+}
+.control-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.control-bar button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #323254;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.control-bar button:hover {
+  background: #00d9ff;
+  color: #111;
+}
+.board {
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+}
+.cell {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  background: #252542;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  user-select: none;
+}
+.cell:hover:not(.wall):not(.path) {
+  background: #2c2c58;
+}
+.cell.wall {
+  background: #38385a;
+  cursor: default;
+}
+.cell.start {
+  background: #2ec46b;
+  box-shadow: 0 0 10px rgba(46, 196, 107, 0.47);
+}
+.cell.end {
+  background: #ff4d6d;
+  box-shadow: 0 0 10px rgba(255, 77, 109, 0.47);
+}
+.cell.path {
+  background: #00d9ff;
+  box-shadow: 0 0 8px rgba(0, 217, 255, 0.4);
+}
+.cell.path-head {
+  background: #88eeff;
+  animation: pulse 0.8s infinite alternate;
+}
+.cell.shake {
+  animation: shake 0.4s;
+  background: #ff4d6d;
+}
+@keyframes pulse {
+  from { opacity: 0.85; }
+  to { opacity: 1; }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+.modal-content {
+  background: #fff;
+  color: #111;
+  padding: 32px;
+  border-radius: 12px;
+  text-align: center;
+}
+.modal-content h2 {
+  margin-bottom: 14px;
+}
+.modal-content p {
+  margin-bottom: 20px;
+  font-size: 17px;
+}
+.modal-content button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  background: #00d9ff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}

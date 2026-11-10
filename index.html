@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Match</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Memory Match</h1>
+    <div class="control-bar">
+      <button id="btnUndo">Undo</button>
+      <button id="btnReset">Reset</button>
+    </div>
+    <div id="gameBoard" class="board"></div>
+  </div>
+
+  <div id="winModal" class="modal">
+    <div class="modal-content">
+      <h2>Level Cleared!</h2>
+      <p id="winMsg"></p>
+      <button id="nextLevelBtn">Next Level</button>
+    </div>
+  </div>
+
+  <div id="allClearModal" class="modal">
+    <div class="modal-content">
+      <h2>🎉 All Levels Complete!</h2>
+      <p>You finished all puzzles!</p>
+      <button id="restartAllBtn">Restart</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
